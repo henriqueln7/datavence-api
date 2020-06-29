@@ -3,6 +3,7 @@ package com.datavenceapi.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -15,6 +16,7 @@ public class User {
     private Long id;
 
     private String name;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @Column()
     @JoinTable(
@@ -24,11 +26,14 @@ public class User {
     @JsonIgnore
     private Set<Project> projects = new HashSet<>();
 
+    private LocalDate birthday;
+
     public User() {}
 
-    public User(Long id, String name) {
+    public User(Long id, String name, LocalDate birthday) {
         this.id = id;
         this.name = name;
+        this.birthday = birthday;
     }
 
     public Long getId() {
@@ -66,5 +71,13 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 }
