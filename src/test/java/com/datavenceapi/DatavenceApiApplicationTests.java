@@ -1,4 +1,4 @@
-package com.example.datavenceapi;
+package com.datavenceapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
