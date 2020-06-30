@@ -1,6 +1,7 @@
 package com.datavenceapi.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 import java.util.Set;
 
@@ -11,6 +12,7 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "O nome não pode ser vazio")
     private String name;
 
     @ManyToMany(mappedBy = "projects")
