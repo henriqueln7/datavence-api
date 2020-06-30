@@ -26,6 +26,11 @@ public class Project {
         this.users = users;
     }
 
+    public void addUser(User user) {
+        this.users.add(user);
+        user.getProjects().add(this);
+    }
+
     public Long getId() {
         return id;
     }
