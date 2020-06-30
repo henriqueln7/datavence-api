@@ -1,11 +1,11 @@
 package com.datavenceapi.controllers;
 
-public class AddUserProjectDTO {
+public class AddUserToProjectDTO {
     private long[] userIds;
 
-    public AddUserProjectDTO() {}
+    public AddUserToProjectDTO() {}
 
-    public AddUserProjectDTO(long[] userIds) {
+    public AddUserToProjectDTO(long[] userIds) {
         this.userIds = userIds;
     }
 
