@@ -1,4 +1,4 @@
-package com.datavenceapi.controllers;
+package com.datavenceapi.dtos;
 
 public class AddUserToProjectDTO {
     private long[] userIds;
