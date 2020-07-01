@@ -28,6 +28,14 @@ public class ProjectService {
         projectRepository.save(project);
     }
 
+    public Project findById(Long id) {
+        var project = projectRepository.findById(id);
+        if(project.isEmpty()) {
+            return null;
+        }
+        return project.get();
+    }
+
     public Project addUserToProject(long projectId, long[] userIds) {
         var project = projectRepository.findById(projectId);
 

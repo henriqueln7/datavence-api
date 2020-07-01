@@ -1,5 +1,6 @@
 package com.datavenceapi.controllers;
 
+import com.datavenceapi.dtos.AddUserToProjectDTO;
 import com.datavenceapi.models.Project;
 import com.datavenceapi.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,12 @@ public class ProjectController {
     public ResponseEntity<Project> save(@RequestBody @Valid Project project) {
         projectService.save(project);
         return ResponseEntity.status(HttpStatus.CREATED).body(project);
+    }
+
+    @GetMapping("/projects/{id}")
+    public ResponseEntity<Project> show(@PathVariable Long id) {
+        Project project = projectService.findById(id);
+        return ResponseEntity.ok(project);
     }
 
     @PostMapping("/projects/{id}/users")
